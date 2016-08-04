@@ -8,7 +8,7 @@ var upload = multer();
 
 app.get('/', function(req, res) {
     app.get('/', function(req, res) {
-        var guidePath = path.join(__dirname, "index.html");
+        var guidePath = path.join(__dirname, "views/index.html");
         res.sendFile(guidePath, function (err) {
             if (err) {
                 throw err;
