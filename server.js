@@ -2,23 +2,10 @@
 
 var express = require('express');
 var multer = require('multer');
-var path = require('path');
 var app = express();
 var upload = multer();
 
-app.get('/', function(req, res) {
-    app.get('/', function(req, res) {
-        var guidePath = path.join(__dirname, "views/index.html");
-        res.sendFile(guidePath, function (err) {
-            if (err) {
-                throw err;
-            }
-            else {
-                console.log("Guide sent");
-            }
-        });
-    });
-});
+app.get('/', express.static("views"));
 
 app.post('/size', upload.single('file'), function (req, res) {
    res.json({
