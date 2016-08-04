@@ -26,6 +26,6 @@ app.post('/size', upload.single('file'), function (req, res) {
    });
 });
 
-app.listen(8080, function() {
+app.listen(process.env.PORT || 8080, function() {
     console.log('node.js is listening on port 8080.');
 });
